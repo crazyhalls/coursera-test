@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nº</th>
+        <th>Menu code</th>
+        <th>Menu name</th>
+        <th>Menu description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in foundItemsDirCtrl.items">
+        <th>{{ $index + 1 }}</th>
+        <th>{{ item.short_name }}</th>
+        <th>{{ item.name }}</th>
+        <th>{{ item.description }}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="bg-danger" ng-show="foundItemsDirCtrl.noItems()">Nothing found</div>
