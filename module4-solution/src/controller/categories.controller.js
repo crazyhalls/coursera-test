@@ -1,31 +1,31 @@
-(function () {
+(function() {
 
-angular.module('data')
-    .controller('CategoriesController', CategoriesController);
+    angular.module('data')
+        .controller('CategoriesController', CategoriesController);
 
-CategoriesController.$inject = ['MenuDataService'];
-function CategoriesController(MenuDataService) {
-    var categoriesCtrl = this;
-    
-    categoriesCtrl.title = "Below are the categories available";
-    categoriesCtrl.categories = [];
-    categoriesCtrl.items = [];
+    CategoriesController.$inject = ['MenuDataService'];
 
-    categoriesCtrl.$onInit = function() {
-        MenuDataService.getAllCategories().then(
-            function(result) {
-                categoriesCtrl.categories = result;
-            }
-        );
-    };
+    function CategoriesController(MenuDataService) {
+        var categorieCtrl = this;
 
-    categoriesCtrl.getItems = function(category) {
-        MenuDataService.getItemsForCategory(category).then(
-            function(result) {
-                categoriesCtrl.items = result;
-            }
-        );
+        categorieCtrl.items = [];
+        categorieCtrl.categories = [];
+
+        categorieCtrl.$onInit = function() {
+            MenuDataService.getAllCategories().then(
+                function(result) {
+                    categorieCtrl.categories = result;
+                }
+            );
+        };
+
+        categorieCtrl.getItems = function(category) {
+            MenuDataService.getItemsForCategory(category).then(
+                function(result) {
+                    categorieCtrl.items = result;
+                }
+            );
+        }
     }
-}
 
 })();
