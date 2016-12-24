@@ -2,14 +2,12 @@
     <thead>
         <tr>
             <th>Item</th>
-            <th>Value</th>
         </tr>
     </thead>
 
     <tbody>
         <tr ng-repeat="item in $ctrl.items">
             <td title="{{item.description}}">{{item.name}}</td>
-            <td align="right">{{item.price_large}}</td>
         </tr>
     </tbody>
 </table>
