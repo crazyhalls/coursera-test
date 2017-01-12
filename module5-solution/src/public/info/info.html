@@ -1,0 +1,28 @@
+<h2 class="text-center">User info</h2>
+
+<div class="container">
+   <div ng-if="infoCtrl.preferences">
+       <div class="user-details">
+           <span>
+             {{infoCtrl.preferences.user.firstname}}
+          </span><br>
+           <span>
+             {{infoCtrl.preferences.user.lastname}}
+          </span><br>
+           <span>
+             {{infoCtrl.preferences.user.email}}
+          </span><br>
+           <span>
+             {{infoCtrl.preferences.user.phone}}
+          </span><br>
+       </div>
+
+       <menu-item
+          menu-item= "infoCtrl.preferences.menuItem">
+       </menu-item>
+   </div>
+    <div ng-if="!infoCtrl.preferences" class="alert-danger">
+        <p>Not Signed Up Yet.<a ui-sref="public.signup">Sign Up Now!</a>
+        </p>
+    </div>
+</div>
